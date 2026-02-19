@@ -11,8 +11,7 @@ Regression problems aim to predict a continuous numerical value based on input f
 
 ## Neural Network Model
 
-<img width="912" height="753" alt="image" src="https://github.com/user-attachments/assets/0641249a-926d-4615-9754-b8f35bafdee7" />
-
+<img width="1132" height="652" alt="image" src="https://github.com/user-attachments/assets/64f7c9b9-7e44-43c4-8c11-132005f2a5bc" />
 
 ## DESIGN STEPS
 
@@ -48,23 +47,8 @@ Evaluate the model with the testing data.
 ### Name: Divya Dharshini S
 ### Register Number: 212224240039
 ```
-import torch
-import torch.nn as nn
-import torch.optim as optim
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
-dataset1 = pd.read_csv('/content/dataset.csv')
-X = dataset1[['Size']].values
-y = dataset1[['Price']].values
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=33)
-scaler = MinMaxScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
-X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-y_train_tensor = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
-X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test, dtype=torch.float32).view(-1, 1)
+#Name:Divya Dharshini S
+#Reg.No:212224240039
 class NeuralNet(nn.Module):
     def __init__(self):
         super().__init__()
@@ -92,17 +76,6 @@ def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
         ai_brain.history['loss'].append(loss.item())
         if epoch % 200 == 0:
             print(f'Epoch [{epoch}/{epochs}], Loss: {loss.item():.6f}')
-train_model(ai_brain, X_train_tensor, y_train_tensor, criterion, optimizer)
-with torch.no_grad():
-    test_loss = criterion(ai_brain(X_test_tensor), y_test_tensor)
-    print(f'Test Loss: {test_loss.item():.6f}')
-loss_df = pd.DataFrame(ai_brain.history)
-import matplotlib.pyplot as plt
-loss_df.plot()
-plt.xlabel("Epochs")
-plt.ylabel("Loss")
-plt.title("Loss during Training")
-plt.show()
 
 ```
 ## Dataset Information
@@ -110,14 +83,13 @@ plt.show()
 <img width="242" height="433" alt="image" src="https://github.com/user-attachments/assets/73ab9b1a-6dd3-4739-8302-2ac5332bd1a7" />
 
 ## OUTPUT
-
-<img width="402" height="197" alt="image" src="https://github.com/user-attachments/assets/6935e5f9-eae3-4eb5-8ce7-d7debb08070a" />
-<img width="417" height="37" alt="image" src="https://github.com/user-attachments/assets/6bf94893-e2d3-4634-9811-0418c5d8a3fe" />
-
+<img width="906" height="256" alt="image" src="https://github.com/user-attachments/assets/5749a2d7-640b-4844-aa1a-b362f02e6952" />
+<img width="922" height="120" alt="image" src="https://github.com/user-attachments/assets/00f0d3f7-a29c-4951-b89d-623b255da20b" />
 
 ### Training Loss Vs Iteration Plot
 
-<img width="873" height="520" alt="image" src="https://github.com/user-attachments/assets/9cacc9f0-234c-46fc-8902-d9d768ad3dc6" />
+<img width="960" height="672" alt="image" src="https://github.com/user-attachments/assets/b10cfde1-3c0f-409d-b40c-9465f5f79f39" />
+
 
 ### New Sample Data Prediction
 
