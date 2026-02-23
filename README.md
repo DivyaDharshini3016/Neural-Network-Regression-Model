@@ -84,8 +84,8 @@ def train_model(divya_brain, X_train, y_train, criterion, optimizer, epochs=2000
 
 ## OUTPUT
 
-<img width="833" height="115" alt="image" src="https://github.com/user-attachments/assets/bf2e178b-1111-42c1-abdd-d2b0e62981e8" />
-<img width="800" height="258" alt="image" src="https://github.com/user-attachments/assets/bf645162-12f2-40af-ae90-6883607b8fc1" />
+<img width="800" height="259" alt="Screenshot 2026-02-23 083322" src="https://github.com/user-attachments/assets/05687648-11e2-4cd4-b149-1859839a3e98" />
+<img width="834" height="115" alt="Screenshot 2026-02-23 083350" src="https://github.com/user-attachments/assets/ad32d8ff-c306-4e93-83d9-2ae46b37503a" />
 
 ### Training Loss Vs Iteration Plot
 
