@@ -11,7 +11,7 @@ Regression problems aim to predict a continuous numerical value based on input f
 
 ## Neural Network Model
 
-<img width="1132" height="652" alt="image" src="https://github.com/user-attachments/assets/64f7c9b9-7e44-43c4-8c11-132005f2a5bc" />
+<img width="1077" height="781" alt="image" src="https://github.com/user-attachments/assets/dd404840-8757-4a91-a143-4ff036b7aa5f" />
 
 ## DESIGN STEPS
 
@@ -53,8 +53,8 @@ class NeuralNet(nn.Module):
     def __init__(self):
         super().__init__()
         self.fc1 = nn.Linear(1, 8)
-        self.fc2 = nn.Linear(8, 10)
-        self.fc3 = nn.Linear(10, 1)
+        self.fc2 = nn.Linear(8, 16)
+        self.fc3 = nn.Linear(16, 1)
         self.relu = nn.ReLU()
         self.history = {'loss': []}
 
@@ -63,17 +63,17 @@ class NeuralNet(nn.Module):
         x = self.relu(self.fc2(x))
         x = self.fc3(x)  # No activation here since it's a regression task
         return x
-ai_brain = NeuralNet()
+divya_brain = NeuralNet()
 criterion = nn.MSELoss()
-optimizer = optim.RMSprop(ai_brain.parameters(), lr=0.001)
-def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
+optimizer = optim.RMSprop(divya_brain.parameters(), lr=0.001)
+def train_model(divya_brain, X_train, y_train, criterion, optimizer, epochs=2000):
     for epoch in range(epochs):
         optimizer.zero_grad()
-        loss = criterion(ai_brain(X_train), y_train)
+        loss = criterion(divya_brain(X_train), y_train)
         loss.backward()
         optimizer.step()
 
-        ai_brain.history['loss'].append(loss.item())
+        divya_brain.history['loss'].append(loss.item())
         if epoch % 200 == 0:
             print(f'Epoch [{epoch}/{epochs}], Loss: {loss.item():.6f}')
 
@@ -83,17 +83,18 @@ def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
 <img width="242" height="433" alt="image" src="https://github.com/user-attachments/assets/73ab9b1a-6dd3-4739-8302-2ac5332bd1a7" />
 
 ## OUTPUT
-<img width="906" height="256" alt="image" src="https://github.com/user-attachments/assets/5749a2d7-640b-4844-aa1a-b362f02e6952" />
-<img width="922" height="120" alt="image" src="https://github.com/user-attachments/assets/00f0d3f7-a29c-4951-b89d-623b255da20b" />
+
+<img width="833" height="115" alt="image" src="https://github.com/user-attachments/assets/bf2e178b-1111-42c1-abdd-d2b0e62981e8" />
+<img width="800" height="258" alt="image" src="https://github.com/user-attachments/assets/bf645162-12f2-40af-ae90-6883607b8fc1" />
 
 ### Training Loss Vs Iteration Plot
 
-<img width="960" height="672" alt="image" src="https://github.com/user-attachments/assets/b10cfde1-3c0f-409d-b40c-9465f5f79f39" />
+<img width="953" height="668" alt="image" src="https://github.com/user-attachments/assets/57d163d7-5a7e-4958-a8e9-9f0a3a14c30b" />
 
 
 ### New Sample Data Prediction
 
-<img width="955" height="130" alt="image" src="https://github.com/user-attachments/assets/d0f5f4b3-9349-4dbf-bb17-2dfacc497e46" />
+<img width="957" height="127" alt="image" src="https://github.com/user-attachments/assets/8d91dcc2-bb53-4f02-8a86-5a2eea5c3f2f" />
 
 ## RESULT
 The neural network regression model was successfully trained and evaluated. The model demonstrated strong predictive performance on unseen data, with a low error rate.
