@@ -94,7 +94,8 @@ def train_model(divya_brain, X_train, y_train, criterion, optimizer, epochs=2000
 
 ### New Sample Data Prediction
 
-<img width="957" height="127" alt="image" src="https://github.com/user-attachments/assets/8d91dcc2-bb53-4f02-8a86-5a2eea5c3f2f" />
+<img width="747" height="185" alt="image" src="https://github.com/user-attachments/assets/25999c3b-538d-471c-a3d6-8a72cc2a577c" />
+
 
 ## RESULT
 The neural network regression model was successfully trained and evaluated. The model demonstrated strong predictive performance on unseen data, with a low error rate.
